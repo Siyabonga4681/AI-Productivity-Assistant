@@ -361,7 +361,7 @@ GEMINI_API_KEY=your_api_key
 # 🖥️ Demo
 
 ```bash
-Lovable App.
+https://id-preview--3741f457-29cf-433e-9798-4b18826bb4df.lovable.app/app
 ```
 
 ---
