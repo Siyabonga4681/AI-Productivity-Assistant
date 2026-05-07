@@ -5,13 +5,14 @@ export const Route = createFileRoute("/app/")({
   component: Dashboard,
 });
 
-const tools = [
+type Tool = { to: string; icon: typeof Mail; title: string; desc: string; gradient?: boolean };
+const tools: Tool[] = [
   { to: "/app/email", icon: Mail, title: "Smart Email Generator", desc: "Draft client, manager, or team emails in seconds.", gradient: true },
   { to: "/app/notes", icon: FileText, title: "Meeting Notes Summarizer", desc: "Extract decisions, action items, and deadlines." },
   { to: "/app/planner", icon: ListChecks, title: "Task Planner & Scheduler", desc: "Prioritize with the Eisenhower matrix." },
   { to: "/app/research", icon: Search, title: "Research Assistant", desc: "Distill articles into insights & simple explanations." },
   { to: "/app/chat", icon: MessageSquare, title: "AI Workspace Chat", desc: "Ask anything — your always-on office assistant." },
-] as const;
+];
 
 const stats = [
   { icon: Zap, label: "Faster drafts", value: "10×" },
@@ -54,16 +55,14 @@ function Dashboard() {
         {tools.map((t) => (
           <Link
             key={t.to}
-            to={t.to}
+            to={t.to as any}
             className="group rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)] transition-all hover:shadow-[var(--shadow-soft)] hover:-translate-y-0.5"
           >
             <div
               className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl"
               style={t.gradient ? { background: "var(--gradient-primary)" } : undefined}
             >
-              <t.icon className={`h-5 w-5 ${t.gradient ? "text-primary-foreground" : "text-accent-foreground"}`}
-                style={!t.gradient ? undefined : undefined}
-              />
+              <t.icon className={`h-5 w-5 ${t.gradient ? "text-primary-foreground" : "text-accent-foreground"}`} />
             </div>
             <h3 className="font-semibold text-foreground">{t.title}</h3>
             <p className="mt-1 text-sm text-muted-foreground">{t.desc}</p>
