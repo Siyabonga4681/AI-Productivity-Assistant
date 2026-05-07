@@ -18,6 +18,10 @@ Automate emails, meetings, planning, and research — all in one intelligent wor
 
 ### 🚀 Built for the AI Skills Accelerator Programme 2026
 
+### 👨‍💻 Author: Siyabonga Jiyane
+
+### 🖥️ Demo:https://productivity-wise.lovable.app
+
 </div>
 
 ---
@@ -295,44 +299,6 @@ FlowMate compresses tasks that traditionally take 10–15 minutes into under 30 
 
 ---
 
-# 🚀 Getting Started
-
-## 1️⃣ Clone Repository
-
-```bash
-git clone https://github.com/your-username/flowmate.git
-```
-
-## 2️⃣ Navigate Into Project
-
-```bash
-cd flowmate
-```
-
-## 3️⃣ Install Dependencies
-
-```bash
-npm install
-```
-
-## 4️⃣ Start Development Server
-
-```bash
-npm run dev
-```
-
----
-
-# 🔑 Environment Variables
-
-Create a `.env` file:
-
-```env
-GEMINI_API_KEY=your_api_key
-```
-
----
-
 # 🔮 Future Improvements
 
 * 🎙️ Voice-enabled AI assistant
@@ -358,21 +324,6 @@ GEMINI_API_KEY=your_api_key
 
 ---
 
-# 🖥️ Demo
-
-```bash
-https://id-preview--3741f457-29cf-433e-9798-4b18826bb4df.lovable.app/app
-```
-
----
-
-# 👨‍💻 Author
-
-### Siyabonga Jiyane
-
-AI Skills Accelerator Programme 2026
-
----
 
 # 📄 License
 
