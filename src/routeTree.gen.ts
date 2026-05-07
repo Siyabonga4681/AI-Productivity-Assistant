@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AppIndexRouteImport } from './routes/app.index'
+import { Route as AppPlannerRouteImport } from './routes/app.planner'
 import { Route as AppNotesRouteImport } from './routes/app.notes'
 import { Route as AppEmailRouteImport } from './routes/app.email'
 
@@ -30,6 +31,11 @@ const AppIndexRoute = AppIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AppRoute,
 } as any)
+const AppPlannerRoute = AppPlannerRouteImport.update({
+  id: '/planner',
+  path: '/planner',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppNotesRoute = AppNotesRouteImport.update({
   id: '/notes',
   path: '/notes',
@@ -46,12 +52,14 @@ export interface FileRoutesByFullPath {
   '/app': typeof AppRouteWithChildren
   '/app/email': typeof AppEmailRoute
   '/app/notes': typeof AppNotesRoute
+  '/app/planner': typeof AppPlannerRoute
   '/app/': typeof AppIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/app/email': typeof AppEmailRoute
   '/app/notes': typeof AppNotesRoute
+  '/app/planner': typeof AppPlannerRoute
   '/app': typeof AppIndexRoute
 }
 export interface FileRoutesById {
@@ -60,14 +68,28 @@ export interface FileRoutesById {
   '/app': typeof AppRouteWithChildren
   '/app/email': typeof AppEmailRoute
   '/app/notes': typeof AppNotesRoute
+  '/app/planner': typeof AppPlannerRoute
   '/app/': typeof AppIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/app' | '/app/email' | '/app/notes' | '/app/'
+  fullPaths:
+    | '/'
+    | '/app'
+    | '/app/email'
+    | '/app/notes'
+    | '/app/planner'
+    | '/app/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/app/email' | '/app/notes' | '/app'
-  id: '__root__' | '/' | '/app' | '/app/email' | '/app/notes' | '/app/'
+  to: '/' | '/app/email' | '/app/notes' | '/app/planner' | '/app'
+  id:
+    | '__root__'
+    | '/'
+    | '/app'
+    | '/app/email'
+    | '/app/notes'
+    | '/app/planner'
+    | '/app/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -98,6 +120,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppIndexRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/planner': {
+      id: '/app/planner'
+      path: '/planner'
+      fullPath: '/app/planner'
+      preLoaderRoute: typeof AppPlannerRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/notes': {
       id: '/app/notes'
       path: '/notes'
@@ -118,12 +147,14 @@ declare module '@tanstack/react-router' {
 interface AppRouteChildren {
   AppEmailRoute: typeof AppEmailRoute
   AppNotesRoute: typeof AppNotesRoute
+  AppPlannerRoute: typeof AppPlannerRoute
   AppIndexRoute: typeof AppIndexRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
   AppEmailRoute: AppEmailRoute,
   AppNotesRoute: AppNotesRoute,
+  AppPlannerRoute: AppPlannerRoute,
   AppIndexRoute: AppIndexRoute,
 }
 
