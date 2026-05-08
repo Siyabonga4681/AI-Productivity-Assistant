@@ -322,12 +322,6 @@ FlowMate compresses tasks that traditionally take 10–15 minutes into under 30 
 | Responsible AI     | Ethical safeguards & transparency          |
 | Presentation       | Professional UI/UX & workflow demos        |
 
----
-
-
-# 📄 License
-
-This project was created for educational, innovation, and demonstration purposes.
 
 ---
 
